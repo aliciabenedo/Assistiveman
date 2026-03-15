@@ -3,11 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package main;
+import gui.mainGUI;
 
 /**
  *
  * @author NagbontianAliciaBene
  */
-public class mainApp {
+public class MainApp {
+    public static void main(String args[]){
+        
+        new mainGUI().setVisible(true);
+        
+    }
     
 }
