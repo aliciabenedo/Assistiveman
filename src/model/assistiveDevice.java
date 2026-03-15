@@ -10,4 +10,30 @@ package model;
  */
 public class assistiveDevice {
     
+    private String deviceID;
+    private String deviceName;
+    private String location;        
+    private String status;
+    
+    public assistiveDevice(String deviceID,String deviceName, String location,String status ){
+        this.deviceID=deviceID;
+        this.deviceName=deviceName;  
+        this.location=location;
+        this.status=status;
+    }
+    public String getDevice(){
+        return deviceID;
+    }
+        public String getDeviceName(){
+        return deviceName;
+    }
+        public String getLocation(){
+        return location;
+    }    
+        public String getStatus(){
+        return status;
+    }
+    public void setStatus(String status){
+        this.status=status;
+    }
 }
