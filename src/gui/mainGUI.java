@@ -39,9 +39,9 @@ public class mainGUI extends javax.swing.JFrame {
         deleteBtn = new javax.swing.JButton();
         viewBtn = new javax.swing.JButton();
         deviceIDTf = new javax.swing.JTextField();
-        deviceNameTxt = new javax.swing.JTextField();
-        locTxt = new javax.swing.JTextField();
-        statusTxt = new javax.swing.JTextField();
+        deviceNameTf = new javax.swing.JTextField();
+        locTf = new javax.swing.JTextField();
+        statusTf = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,15 +88,15 @@ public class mainGUI extends javax.swing.JFrame {
             }
         });
 
-        deviceNameTxt.addActionListener(new java.awt.event.ActionListener() {
+        deviceNameTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deviceNameTxtActionPerformed(evt);
+                deviceNameTfActionPerformed(evt);
             }
         });
 
-        statusTxt.addActionListener(new java.awt.event.ActionListener() {
+        statusTf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statusTxtActionPerformed(evt);
+                statusTfActionPerformed(evt);
             }
         });
 
@@ -128,9 +128,9 @@ public class mainGUI extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(deviceIDTf, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(locTxt)
-                                .addComponent(statusTxt)
-                                .addComponent(deviceNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(locTf)
+                                .addComponent(statusTf)
+                                .addComponent(deviceNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -149,15 +149,15 @@ public class mainGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(deviceNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(deviceNameTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(locTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(locTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(statusTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(statusTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn)
@@ -174,13 +174,13 @@ public class mainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                          
 
-    private void deviceNameTxtActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void deviceNameTfActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-    }                                             
+    }                                            
 
-    private void statusTxtActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void statusTfActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }                                         
+    }                                        
 
     private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
@@ -190,14 +190,20 @@ public class mainGUI extends javax.swing.JFrame {
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
         String id = deviceIDTf.getText();
-        String name = deviceNameTxt.getText();
-        String location = locTxt.getText();
-        String status = statusTxt.getText();
+        String name = deviceNameTf.getText();
+        String location = locTf.getText();
+        String status = statusTf.getText();
         assistiveDevice device = new assistiveDevice(id, name, location, status);
         deviceList.addDevice(device);
         
-        javax.swing.JOptionPane.showMessageDialog(this,"device has been added");
+   
         
+        javax.swing.JOptionPane.showMessageDialog(this,"device has been added");
+                   
+        deviceIDTf.setText("");
+        deviceNameTf.setText("");
+        locTf.setText("");
+        statusTf.setText("");
     }                                      
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -206,9 +212,13 @@ public class mainGUI extends javax.swing.JFrame {
         assistiveDevice device=deviceList.searchDevice(id);
         
         if(device != null){
-            deviceNameTxt.setText(device.getDeviceName());
-            locTxt.setText(device.getLocation());
-            statusTxt.setText(device.getStatus());
+            deviceNameTf.setText(device.getDeviceName());
+            locTf.setText(device.getLocation());
+            statusTf.setText(device.getStatus());
+            
+            javax.swing.JOptionPane.showMessageDialog(this, "device found");
+            
+            
             
             
         }
@@ -221,7 +231,7 @@ public class mainGUI extends javax.swing.JFrame {
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
         String id= deviceIDTf.getText();
-        deviceList.removeDeviceName(id);
+        deviceList.removeDevice(id);
         javax.swing.JOptionPane.showMessageDialog(this, "device has ben deleted");
 
     }                                         
@@ -265,15 +275,15 @@ public class mainGUI extends javax.swing.JFrame {
     private javax.swing.JButton addBtn;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JTextField deviceIDTf;
-    private javax.swing.JTextField deviceNameTxt;
+    private javax.swing.JTextField deviceNameTf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField locTxt;
+    private javax.swing.JTextField locTf;
     private javax.swing.JButton searchBtn;
-    private javax.swing.JTextField statusTxt;
+    private javax.swing.JTextField statusTf;
     private javax.swing.JButton viewBtn;
     // End of variables declaration                   
 }
