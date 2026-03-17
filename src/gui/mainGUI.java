@@ -1,4 +1,4 @@
-
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -35,9 +35,9 @@ public class mainGUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         addBtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        viewBtn = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -61,19 +61,19 @@ public class mainGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        searchBtn.setText("search");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                searchBtnActionPerformed(evt);
             }
         });
 
-        jButton3.setText("delete");
+        deleteBtn.setText("delete");
 
-        jButton4.setText("View");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        viewBtn.setText("View");
+        viewBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                viewBtnActionPerformed(evt);
             }
         });
 
@@ -83,7 +83,6 @@ public class mainGUI extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setText("jTextField2");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -108,11 +107,11 @@ public class mainGUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(addBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(searchBtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(deleteBtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4))
+                        .addComponent(viewBtn))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,9 +156,9 @@ public class mainGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addBtn)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(searchBtn)
+                    .addComponent(deleteBtn)
+                    .addComponent(viewBtn))
                 .addContainerGap())
         );
 
@@ -178,9 +177,9 @@ public class mainGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                           
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void viewBtnActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
-    }                                        
+    }                                       
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
@@ -197,9 +196,9 @@ public class mainGUI extends javax.swing.JFrame {
         
     }                                      
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }                                        
+    }                                         
 
     /**
      * @param args the command line arguments
@@ -238,9 +237,7 @@ public class mainGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton addBtn;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -250,5 +247,7 @@ public class mainGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JButton viewBtn;
     // End of variables declaration                   
 }
