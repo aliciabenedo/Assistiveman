@@ -14,14 +14,14 @@ import java.util.LinkedList;
 public class repairReqQueue {
 
 
-    private Queue<String> requestQueue;
+    private Queue<String> requestQueue;//the queue to store repair requests
 
     public repairReqQueue() {
-        requestQueue = new LinkedList<>();
+        requestQueue = new LinkedList<>();//initialising queue
     }
 
-    public void enqueue(String request) {
-        requestQueue.add(request);
+    public void enqueue(String request) { //add request to queue
+        requestQueue.add(request); //adds request to queue
         System.out.println("Request added: " + request);
     }
 
@@ -43,8 +43,8 @@ public class repairReqQueue {
 
         System.out.println("Repair Requests:");
 
-        for(String req : requestQueue){
-            System.out.println(req);
+        for(String req : requestQueue){//loops through queue
+            System.out.println(req);//prints each request
         }
     }
 }
