@@ -9,11 +9,11 @@ import model.assistiveDevice;
  *
  * @author NagbontianAliciaBene
  */
-public interface deviceOperation {
-    void addDevice(assistiveDevice device);
-    assistiveDevice searchDevice(String id);
+public interface deviceOperation {//this defines the required operations
+    void addDevice(assistiveDevice device);//adds a new device
+    assistiveDevice searchDevice(String id);//searches by id
     
-    void removeDevice(String id);
+    void removeDevice(String id); //this deletes the device
     void dislayDevices();
     
 }
