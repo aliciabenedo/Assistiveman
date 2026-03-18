@@ -9,7 +9,8 @@ import model.assistiveDevice;
  *
  * @author NagbontianAliciaBene
  */
-public interface deviceMan {
+public interface deviceMan {//interface that feines core dev operations
+    //also shows abstraction
     void addDevice(assistiveDevice device);
     void removeDevice(String deviceID);    
     
